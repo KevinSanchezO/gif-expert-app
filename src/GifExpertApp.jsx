@@ -1,6 +1,5 @@
 import { useState } from "react"
-import { AddCategory } from "./components/AddCategory";
-import { GifGrid } from "./components/GifGrid";
+import { AddCategory, GifGrid } from "./components";
 import { selectRandomOption } from "./helpers/selectRandomOption";
 
 export const GifExpertApp = () => {
@@ -10,6 +9,14 @@ export const GifExpertApp = () => {
     const onAddCategory = (newCategory) => {
         if (categories.includes(newCategory)) return;
         setCategories( [newCategory, ...categories] )
+    }
+
+    const deleteCategory = (selectedCategory) => {
+        setCategories(
+            (current) => current.filter(
+                (category) => category !== selectedCategory
+            )
+        );
     }
 
     return (
@@ -26,6 +33,7 @@ export const GifExpertApp = () => {
                     <GifGrid 
                         key={category} 
                         category={category}
+                        deleteCategory = {(value) => deleteCategory(value)}
                     />
                 ))
             }
