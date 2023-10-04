@@ -8,10 +8,9 @@ export const GifGrid = ({ category, deleteCategory }) => {
 
     return (
         <>
-            <div className="gif-grid-title">
-                <h3>{category}</h3>
-                <button onClick={() => deleteCategory(category)}> X </button>
-            </div>
+
+            <h3>{category}</h3>
+            <button onClick={() => deleteCategory(category)}> X </button>
 
             {isLoading ? (<h2>Loading...</h2>):null}
 

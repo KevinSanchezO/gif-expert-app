@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
 import { useState } from "react"
 import { AddCategory, GifGrid } from "./components";
 import { selectRandomOption } from "./helpers/selectRandomOption";
@@ -23,6 +26,10 @@ export const GifExpertApp = () => {
         <>
 
             <h1>Gif Expert App</h1>
+
+            <a href='https://github.com/KevinSanchezO/gif-expert-app' target="_blank">
+              <p> <FontAwesomeIcon icon={faGithub}/> Made by Kevin Sánchez</p>
+            </a>
 
             <AddCategory 
                 onNewCategory = {(value) => onAddCategory(value)}
